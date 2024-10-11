@@ -1,8 +1,6 @@
 package com.test.automation.testcases;
 
 import com.java.automation.anotation.FrameworkAnnotation;
-import com.java.automation.builder.SpecResourceBuilder;
-import com.java.automation.builder.SpecResponseBuilder;
 import org.testng.annotations.Test;
 
 import static com.java.automation.enums.TestCategoryType.SMOKE;

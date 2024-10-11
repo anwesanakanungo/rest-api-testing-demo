@@ -1,9 +1,8 @@
 package com.test.automation.testcases;
 
-import com.github.javafaker.Faker;
 import com.java.automation.anotation.FrameworkAnnotation;
-import com.java.automation.builder.SpecResourceBuilder;
-import com.java.automation.builder.SpecResponseBuilder;
+import com.java.automation.builder.RequestSpecBuilder;
+import com.java.automation.builder.ResponseSpecBuilder;
 import com.test.automation.TestConstants.TestConstants;
 import com.test.automation.pojo.Users;
 import com.test.automation.pojo.UsersResponse;
@@ -29,12 +28,12 @@ public class TestUser {
                 .setStatus(RandomUtil.getStatus())
                 .build();
         Response response = given()
-                .spec(SpecResourceBuilder.resourcePostBulider())
+                .spec(RequestSpecBuilder.requestPostBuilder())
                 .body(users)
                 .when()
                 .post(TestConstants.USERSCREATIONAPI)
                 .then()
-                .spec(SpecResponseBuilder.createResponseSpecification(201))
+                .spec(ResponseSpecBuilder.createResponseSpecification(201))
                 .extract().response();
         ResponseBody body = response.getBody();
         UsersResponse responseBody = body.as(UsersResponse.class);
@@ -43,11 +42,11 @@ public class TestUser {
     }
     @Test
     public static void testGetUserDetails() {
-        Response response = given().spec(SpecResourceBuilder.resourceGetBulider())
+        Response response = given().spec(RequestSpecBuilder.requestGetBuilder())
                 .when()
                 .get(TestConstants.USERSGETAPI + DataStore.getValue("id"))
                 .then()
-                .spec(SpecResponseBuilder.createResponseSpecification(200))
+                .spec(ResponseSpecBuilder.createResponseSpecification(200))
                 .extract()
                 .response();
         int user_id = response.path("id");
@@ -62,12 +61,12 @@ public class TestUser {
                 .setEmail(RandomUtil.getEmail())
                 .setStatus(RandomUtil.getStatus())
                 .build();
-        Response response = given().spec(SpecResourceBuilder.resourceGetBulider())
+        Response response = given().spec(RequestSpecBuilder.requestGetBuilder())
                 .body(users)
                 .when()
                 .patch(TestConstants.USERSGETAPI + DataStore.getValue("id"))
                 .then()
-                .spec(SpecResponseBuilder.createResponseSpecification(200))
+                .spec(ResponseSpecBuilder.createResponseSpecification(200))
                 .extract()
                 .response();
         ResponseBody body = response.getBody();
@@ -81,11 +80,11 @@ public class TestUser {
     @Test
     public static void testZDeleteUserDetails() {
 
-        Response response = given().spec(SpecResourceBuilder.resourceGetBulider())
+        Response response = given().spec(RequestSpecBuilder.requestGetBuilder())
                 .when()
                 .delete(TestConstants.USERSGETAPI + DataStore.getValue("id"))
                 .then()
-                .spec(SpecResponseBuilder.createResponseSpecificationNoContent(204))
+                .spec(ResponseSpecBuilder.createResponseSpecificationNoContent(204))
                 .extract()
                 .response();
 
