@@ -4,8 +4,8 @@
 
     <test thread-count="1" name="Test">
         <classes>
-            <class name="com.test.automation.testcases.TestUser"/>
-            <class name="com.test.automation.testcases.Test1"/>
+            <class name="com.test.api.testcases.TestUser"/>
+            <class name="com.test.api.testcases.Test1"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
