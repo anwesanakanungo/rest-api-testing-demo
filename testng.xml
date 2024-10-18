@@ -2,10 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-    <test thread-count="1" name="Test">
+    <test thread-count="2" name="Test" parallel="methods">
         <classes>
             <class name="com.test.api.testcases.TestUser"/>
             <class name="com.test.api.testcases.Test1"/>
+            <class name="com.test.ui.testcases.testGoogle"/>
+            <class name="com.test.ui.testcases.TestUi"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

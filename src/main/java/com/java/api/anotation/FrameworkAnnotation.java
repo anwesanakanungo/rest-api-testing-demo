@@ -16,4 +16,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface FrameworkAnnotation {
 
     TestCategoryType[] TestCategoryType();
+
 }

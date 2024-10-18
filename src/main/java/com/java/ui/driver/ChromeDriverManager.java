@@ -8,7 +8,7 @@ public class ChromeDriverManager extends DriverManager {
 
     @Override
     protected WebDriver createDriver() {
-        System.out.println("Initializing Chrome Driver");
+       // System.out.println("Initializing Chrome Driver");
         return new ChromeDriver(getChromeOptions());
     }
 

@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class FirefoxDriverManager extends DriverManager {
     @Override
     protected WebDriver createDriver() {
-        System.out.println("Initializing Firefox Driver");
+        //System.out.println("Initializing Firefox Driver");
         return new FirefoxDriver(getFirefoxOptions());
     }
 

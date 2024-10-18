@@ -19,7 +19,7 @@ import static io.restassured.RestAssured.given;
 public class TestUser {
     private static Users users;
     @FrameworkAnnotation(TestCategoryType = {SANITY})
-    @Test
+    @Test(priority = 0)
     public static void testCreateUser() {
         users = Users.builder()
                 .setName(RandomUtil.getFirstName())
@@ -40,7 +40,7 @@ public class TestUser {
         DataStore.setValue("id", responseBody.getId());
         Assert.assertEquals("male", responseBody.getGender());
     }
-    @Test
+    @Test(dependsOnMethods = {"testCreateUser"})
     public static void testGetUserDetails() {
         Response response = given().spec(RequestSpecBuilder.requestGetBuilder())
                 .when()
@@ -54,7 +54,7 @@ public class TestUser {
         Assert.assertEquals(DataStore.getValue("id"), user_id);
         Assert.assertEquals("male", gender);
     }
-    @Test
+    @Test(dependsOnMethods = {"testCreateUser"})
     public static void testUpdateUserDetails() {
         users = Users.builder()
                 .setName(RandomUtil.getFirstName())
@@ -77,10 +77,10 @@ public class TestUser {
         Assert.assertEquals("male", gender);
     }
 
-    @Test
+    @Test(dependsOnMethods = {"testCreateUser"})
     public static void testZDeleteUserDetails() {
 
-        Response response = given().spec(RequestSpecBuilder.requestGetBuilder())
+        given().spec(RequestSpecBuilder.requestGetBuilder())
                 .when()
                 .delete(TestConstants.USERSGETAPI + DataStore.getValue("id"))
                 .then()

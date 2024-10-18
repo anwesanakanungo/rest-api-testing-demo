@@ -21,7 +21,7 @@ public final class ConfigReader {
         } catch (IOException e) {
             System.exit(0);
         }
-        properties.entrySet().forEach(e -> MAP.put(String.valueOf(e.getKey()), (String.valueOf(e.getValue()))));
+        properties.forEach((key, value) -> MAP.put(String.valueOf(key), (String.valueOf(value))));
     }
 
     public static String getValue(String Key) {
