@@ -37,4 +37,19 @@ public class TestUi {
          home.clickLogout();
 
     }
+    @Test
+    public void testCreateUser() throws InterruptedException {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        HomePage home= LoginPage.using(driver)
+                .launch()
+                .setUsername("Admin")
+                .setPassword("admin123")
+                .clickSubmit();
+        home.goToUser()
+                .createUser("Admin","Active" ,"abbaba","aabbaba","aaaa")
+                .clickLogout();
+
+
+    }
+
 }
