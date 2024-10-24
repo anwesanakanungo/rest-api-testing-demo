@@ -11,5 +11,6 @@ public final class FrameworkConstants {
             + "main" + File.separator + "resources";
     public static final String CONFIG_PROPERTIES_PATH = RESOURCES_FOLDER_PATH + File.separator + "config.properties";
     public static final String JSON_SCHEMA_PATH = RESOURCES_FOLDER_PATH + File.separator + "json" + File.separator + "json-schema.json";
+    public static final String JSON_FILE = RESOURCES_FOLDER_PATH + File.separator + "jsonfile" + File.separator + "Response.json";
     public static final int COUNTRYMAN =3;
 }
