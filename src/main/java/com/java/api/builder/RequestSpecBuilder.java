@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class RequestSpecBuilder {
 
+
     public static RequestSpecification requestGetBuilder() {
         return new io.restassured.builder.RequestSpecBuilder().setBaseUri(ConfigReader.getValue("base-url"))
                 .addHeader("Authorization", ConfigReader.getValue("access-token"))

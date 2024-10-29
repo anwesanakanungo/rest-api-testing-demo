@@ -16,7 +16,7 @@ import static com.java.api.enums.TestCategoryType.SANITY;
 import static io.restassured.RestAssured.given;
 
 
-public class TestUser {
+public class TestUser{
     private static Users users;
     @FrameworkAnnotation(TestCategoryType = {SANITY})
     @Test(priority = 0)
