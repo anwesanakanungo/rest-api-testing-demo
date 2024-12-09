@@ -1,0 +1,16 @@
+API Automation Framework built using Rest Assured, Java 8 , Maven, Test NG , AssertJ , Lombok ,JAVA faker , Jackson binding ,PODOM (Generating data for POJO ) Frame work support :
+
+Design pattern used : Builder design pattern ( for Post and PUT request ) and it also support the predefined user input data like JSON file and make changes on the same is also taken care in ApiUtilClass .
+Each response of the API will be stored in the OUTPUT folder .
+Configuration file will be shared both by API and UI classes .
+Response of the each Post request will be shared by GET and PUT APIS using DataStore class .
+Faker API is used for uniquely creating data for each test . Assumption:
+Always run the Create Booking and then GET that booking . (Create bookingid will be input for the GET booking)
+Note : Update and delete cannot be run because of the Token is not generated.( Username password is not working )
+
+How to run the Test :
+
+Install java 8 installed and set JAVA_HOME
+Set Maven_home
+Check out the code .
+Go to the terminal run maven install or mvn clean install test -DsuiteXmlFile="testng.xml" UI Automation Framework built using Rest Assured, Java 8 , Maven, Test NG , AssertJ , Lombok ,JAVA faker
