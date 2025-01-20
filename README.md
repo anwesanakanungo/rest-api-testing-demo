@@ -14,3 +14,11 @@ Install java 8 installed and set JAVA_HOME
 Set Maven_home
 Check out the code .
 Go to the terminal run maven install or mvn clean install test -DsuiteXmlFile="testng.xml" UI Automation Framework built using Rest Assured, Java 8 , Maven, Test NG , AssertJ , Lombok ,JAVA faker
+
+Factory design pattern (Browser support , Currently support CHORME(106) and firefox (104) it can be extended any number of Browsers )
+Page objects in fluent style
+Configuration file will be shared both by API and UI classes . How to run the Test :
+Install java 8 installed and set JAVA_HOME
+Set Maven_home
+Check out the code .
+Go to the terminal run maven install or mvn clean install test -DsuiteXmlFile="testng.xml"
